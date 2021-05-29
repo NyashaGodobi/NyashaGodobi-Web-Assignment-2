@@ -1,0 +1,133 @@
+{% extends 'enquiries/base.html' %}
+
+{% block title %}
+    <title>NyashTechSolutions | Enquiries</title>
+{% endblock %}
+
+
+{% block body %}
+    <!--enquires-->
+    <div class="container pt-5 pb-5 pl-2 pr-2">
+        <div class="row justify-content-center align-items-center">
+            <div class="col-md-6 card bg-white shadow-lg">
+                <div class="justify-content-center align-items-center">
+
+                    <!--header-->
+                    <div class="container-fluid bg-light">
+                        <p class="pt-2 pb-2 feedback">Leave a message and we'll get in touch</p>
+                    </div>
+                    <div class="container">
+
+                        <form method="POST">
+                            {% csrf_token %}
+                            <div class="row">
+                                <!--name-->
+                                <div class="col-md-12">
+                                    <fieldset class="form-group">
+                                        <div class="form-group">
+                                            <label for="name" class="col-form-label">Name<span
+                                                    class="asteriskField">*</span></label>
+                                            <div class="">
+                                                <input type="text" name="name" autofocus
+                                                       class="textinput textInput form-control" required id="name">
+                                            </div>
+                                            <span class="pt-1 pb-1 errorMsg" id="nameError"></span>
+                                        </div>
+                                    </fieldset>
+                                </div>
+
+                                <!--number-->
+                                <div class="col-md-12">
+                                    <fieldset class="form-group">
+                                        <div class="form-group">
+                                            <label for="number" class="col-form-label">Phone Number<span
+                                                    class="asteriskField">*</span></label>
+                                            <div class="">
+                                                <input type="number" name="number" autofocus
+                                                       class="textinput textInput form-control" required id="number">
+                                            </div>
+                                        </div>
+                                        <span class="pt-1 pb-1 errorMsg" id="numberError"></span>
+                                    </fieldset>
+                                </div>
+
+                                <!--email-->
+                                <div class="col-md-12">
+                                    <fieldset class="form-group">
+                                        <div class="form-group">
+                                            <label for="email" class="col-form-label">Email<span
+                                                    class="asteriskField">*</span></label>
+                                            <div class="">
+                                                <input type="email" name="email" autofocus
+                                                       class="textinput textInput form-control" required id="email">
+                                            </div>
+                                        </div>
+                                        <span class="pt-1 pb-1 errorMsg" id="emailError"></span>
+                                    </fieldset>
+                                </div>
+
+                                <!--enquiry-->
+                                <div class="col-md-12">
+                                    <fieldset class="form-group">
+                                        <div class="form-group">
+                                            <label for="enquiry" class="col-form-label">Enquiry<span
+                                                    class="asteriskField">*</span></label>
+                                            <div class="">
+                                            <textarea type="text" name="enquiry" autofocus
+                                                      class="textinput textInput form-control" required
+                                                      id="enquiry"></textarea>
+                                            </div>
+                                        </div>
+                                        <span class="pt-1 pb-1 errorMsg" id="enquiryError"></span>
+                                    </fieldset>
+                                </div>
+
+                                <!--submit btn-->
+                                <div class="col-md-12 pt-2 pb-4 text-center">
+                                    <button class="btn btn-md btn-outline-primary w-100" type="submit">SUBMIT
+                                    </button>
+                                </div>
+                            </div>
+                        </form>
+
+                        <div class="row">
+                            <!--clear btn-->
+                            <div class="col-md-6 pt-2 pb-4 text-center">
+                                <button class="btn btn-sm btn-outline-danger w-100" onclick="clearForm()">CLEAR
+                                </button>
+                            </div>
+
+                            <!--view enquiries button-->
+                            <div class="col-md-6 pt-2 pb-4 text-center">
+                                <button class="btn btn-sm btn-outline-success w-100"
+                                        onclick="location.href='{% url 'view-enquiries' %}'">
+                                    VIEW ENQUIRIES
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        //input fields
+        let subName = document.getElementById('name');
+        let subNumber = document.getElementById('number');
+        let email = document.getElementById('email');
+        let enquiry = document.getElementById('enquiry');
+
+        //errorFields
+        let nameError = document.getElementById('nameError');
+        let numberError = document.getElementById('numberError');
+        let emailError = document.getElementById('emailError');
+        let enquiryError = document.getElementById('enquiryError');
+
+        function clearForm() {
+            subName.value = subNumber.value = email.value = enquiry.value = nameError.innerHTML = numberError.innerHTML = emailError.innerHTML = enquiryError.innerHTML = "";
+        }
+    </script>
+{% endblock %}
+

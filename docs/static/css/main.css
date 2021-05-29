@@ -1,0 +1,84 @@
+.navbar-light .navbar-brand,
+.navbar-light .navbar-nav .nav-link {
+    color: darkblue;
+}
+.navbar-light .navbar-brand .navbar-brand:hover,
+.navbar-light .nav-item.active .nav-link,
+.navbar-light .nav-item .nav-link:active,
+.navbar-light .nav-item .nav-link:focus,
+.navbar-light .nav-item:hover .nav-link {
+    color: dodgerblue;
+}
+
+body {
+    position: relative;
+}
+
+.main {
+    margin-right: 15px;
+    font-size: 16px;
+}
+
+.main-text{
+    font-size: 32px; color: green;
+}
+
+.company-name{
+    font-weight: bold; color: blue; letter-spacing: 2px; font-size: 48px; padding-right: 10px;
+}
+
+.home-spacing{
+    padding-top: 40px; padding-bottom: 40px;
+}
+
+.main-img{
+    height: 320px;
+}
+
+.solutions-heading{
+    font-weight: bold; color: blue; letter-spacing: 2px; font-size: 40px;
+}
+
+.slash{
+    width: 120px; height: 3px; background-color: green;
+}
+
+.web{
+    text-align: center; font-weight: bold; font-size: 26px; color: dodgerblue;
+}
+
+.mobile{
+    text-align: center; font-weight: bold; font-size: 26px; color: red;
+}
+
+.cloud{
+    text-align: center; font-weight: bold; font-size: 26px; color: green;
+}
+
+.consultancy{
+    text-align: center; font-weight: bold; font-size: 26px; color: orange;
+}
+
+.quote{
+    color: black; text-align: center;font-weight: bold;
+}
+
+.myBrand{
+    padding: 1px;height: 43px;width: 53px;
+}
+
+.feedback{
+    font-size: 20px; font-weight: bold; text-align: center; color: dodgerblue;
+}
+
+.errorMsg{
+    color: red; font-weight: lighter; text-align: left;
+}
+
+.contact-us{
+    color: black; text-align: center;font-weight: bold;
+}
+
+.nav-bg{
+    background-color: white;
+}

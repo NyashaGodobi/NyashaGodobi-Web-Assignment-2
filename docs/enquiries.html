@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+
+    <!--favicon-->
+    <link rel="icon" type="image/png" sizes="64x64" href="static/img/">
+
+    <title>NyashTechSolutions | Contact Us</title>
+
+    <!--jquery-->
+    <script src="static/js/jquery-slim.min.js"></script>
+
+    <!--css-->
+    <link href="static/css/bootstrap.min.css" rel="stylesheet"/>
+    <link href="static/css/all.min.css" rel="stylesheet"/>
+    <link href="static/css/main.css" rel="stylesheet"/>
+
+
+</head>
+<body data-spy="scroll" data-target=".navbar" data-offset="50">
+
+<!--navigation bar-->
+<nav class="navbar navbar-expand-md navbar-light shadow-lg sticky-top nav-bg" data-target="fixed-on-scroll">
+
+    <div class="container">
+
+        <!--NavBar Brand-->
+        <div class="navbar-brand">
+            <img src="static/img/" class="myBrand" alt="logo" onclick="location.href='#'">
+        </div>
+
+        <!--ToggleButton-->
+
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#mainNav"
+                aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <!--NavLinks-->
+        <div class="collapse navbar-collapse" id="mainNav" style="font-weight: lighter">
+
+            <!--navbar center-->
+            <ul class="nav navbar-nav mr-auto mx-auto">
+            </ul>
+
+
+            <!--navbar right-->
+            <ul class="nav navbar-nav navbar-right mr-lg-4">
+
+                <!--home-->
+                <li class="nav-item main">
+                    <a class="nav-link" href="index.html">Home</a>
+                </li>
+
+                <!--services-->
+                <li class="nav-item  main">
+                    <a class="nav-link" href="services.html">Services</a>
+                </li>
+
+                <!--contact us-->
+                <li class="nav-item main active">
+                    <a class="nav-link" href="enquiries.html">Enquires</a>
+                </li>
+
+            </ul>
+        </div>
+
+    </div>
+
+</nav>
+
+
+<!--enquires-->
+<div class="container pt-5 pb-5 pl-2 pr-2">
+    <div class="row justify-content-center align-items-center">
+        <div class="col-md-6 card bg-white shadow-lg">
+            <div class="justify-content-center align-items-center">
+                <form onsubmit="return false;" novalidate>
+                    <!--header-->
+                    <div class="container-fluid bg-light">
+                        <p class="pt-2 pb-2 feedback">Leave a message and we'll get in touch</p>
+                    </div>
+                    <div class="container">
+                        <div class="row">
+                            <!--name-->
+                            <div class="col-md-12">
+                                <fieldset class="form-group">
+                                    <div class="form-group">
+                                        <label for="name" class="col-form-label">Name<span
+                                                class="asteriskField">*</span></label>
+                                        <div class="">
+                                            <input type="text" name="name" autofocus
+                                                   class="textinput textInput form-control" required id="name">
+                                        </div>
+                                        <span class="pt-1 pb-1 errorMsg" id="nameError"></span>
+                                    </div>
+                                </fieldset>
+                            </div>
+
+                            <!--number-->
+                            <div class="col-md-12">
+                                <fieldset class="form-group">
+                                    <div class="form-group">
+                                        <label for="number" class="col-form-label">Number<span
+                                                class="asteriskField">*</span></label>
+                                        <div class="">
+                                            <input type="text" name="number" autofocus
+                                                   class="textinput textInput form-control" required id="number">
+                                        </div>
+                                    </div>
+                                    <span class="pt-1 pb-1 errorMsg" id="numberError"></span>
+                                </fieldset>
+                            </div>
+
+                            <!--email-->
+                            <div class="col-md-12">
+                                <fieldset class="form-group">
+                                    <div class="form-group">
+                                        <label for="email" class="col-form-label">Email<span
+                                                class="asteriskField">*</span></label>
+                                        <div class="">
+                                            <input type="text" name="email" autofocus
+                                                   class="textinput textInput form-control" required id="email">
+                                        </div>
+                                    </div>
+                                    <span class="pt-1 pb-1 errorMsg" id="emailError"></span>
+                                </fieldset>
+                            </div>
+
+                            <!--enquiry-->
+                            <div class="col-md-12">
+                                <fieldset class="form-group">
+                                    <div class="form-group">
+                                        <label for="enquiry" class="col-form-label">Enquiry<span
+                                                class="asteriskField">*</span></label>
+                                        <div class="">
+                                        <textarea type="text" name="enquiry" autofocus
+                                                  class="textinput textInput form-control" required
+                                                  id="enquiry"></textarea>
+                                        </div>
+                                    </div>
+                                    <span class="pt-1 pb-1 errorMsg" id="enquiryError"></span>
+                                </fieldset>
+                            </div>
+
+                            <!--clear btn-->
+                            <div class="col-md-6 pt-2 pb-4 text-center">
+                                <button class="btn btn-md btn-outline-danger w-100" onclick="clearForm()">CLEAR</button>
+                            </div>
+                            <!--submit btn-->
+                            <div class="col-md-6 pt-2 pb-4 text-center">
+                                <button class="btn btn-md btn-outline-primary w-100" onclick="validateMyForm()">SUBMIT
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!--js-->
+<script src="static/js/popper.js"></script>
+<script src="static/js/bootstrap.min.js"></script>
+<script src="static/js/all.min.js"></script>
+<script src="static/js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,118 @@
+{% extends 'enquiries/base.html' %}
+{% load staticfiles %}
+
+{% block title %}
+    <title>NyashTechSolutions | Home</title>
+{% endblock %}
+
+
+{% block body %}
+    <!--home-->
+    <div class="container-fluid bg-light">
+        <div class="row text-center home-spacing">
+            <!--intro-->
+            <div class="col-md-6 text-center">
+                <div class="container" style="padding-top: 80px">
+                    <text class="main-text">Build Your Next Generation Tech Solution With <br>
+                        <text class="company-name">NyashTechSolutions</text>
+                    </text>
+                </div>
+                <!--brief catalogue-->
+                <div class="row pt-3">
+                    <div class="col-md-3 pt-2 pb-2">
+                        <a class="btn btn-outline-primary btn-md" href="{% url 'services' %}">Web Apps</a>
+                    </div>
+                    <div class="col-md-3 pt-2 pb-2">
+                        <a class="btn btn-outline-danger btn-md" href="{% url 'services' %}">Mobile Apps</a>
+                    </div>
+                    <div class="col-md-3 pt-2 pb-2">
+                        <a class="btn btn-outline-success btn-md" href="{% url 'services' %}">Cloud Solutions</a>
+                    </div>
+                    <div class="col-md-3 pt-2 pb-2">
+                        <a class="btn btn-outline-warning btn-md" href="{% url 'services' %}">Consultancy</a>
+                    </div>
+                </div>
+            </div>
+            <!--image-->
+            <div class="col-md-6 text-center">
+                <img src="{% static 'enquiries/img/visionary.svg' %}" class="main-img" alt="img">
+            </div>
+        </div>
+    </div>
+
+
+    <!--services-->
+    <div class="container pt-5 pb-4">
+        <div class="text-center">
+            <h1 class="solutions-heading">Our Solutions</h1>
+            <center>
+                <div class="slash"></div>
+            </center>
+        </div>
+        <div class="row pt-3">
+            <!--web apps-->
+            <div class="col-md-3 pt-2 pb-2">
+                <div class="card">
+                    <div class="card-header">
+                        <img class="card-img" src="{% static 'enquiries/img/web.svg' %}" alt="img">
+                        <p class="card-title pt-2 web">Web Apps</p>
+                    </div>
+                    <div class="card-body">
+                        We help we build top notch applications for the web that serve you and your client
+                        No specifications are too much for us, we deliver !
+                    </div>
+                </div>
+            </div>
+            <!--mobile apps-->
+            <div class="col-md-3 pt-2 pb-2">
+                <div class="card">
+                    <div class="card-header">
+                        <img class="card-img" src="{% static 'enquiries/img/mobile.svg' %}" alt="img">
+                        <p class="card-title pt-2 mobile">Mobile Apps</p>
+                    </div>
+                    <div class="card-body">
+                        What else isn't on mobile these days? Want a mobile solution for your clients? Engage us and
+                        we'll
+                        make your dream come true
+                    </div>
+                </div>
+            </div>
+            <!--cloud solutions-->
+            <div class="col-md-3 pt-2 pb-2">
+                <div class="card">
+                    <div class="card-header">
+                        <img class="card-img" src="{% static 'enquiries/img/cloud.svg' %}" style="" alt="img">
+                        <p class="card-title pt-2 cloud">Cloud Solutions</p>
+                    </div>
+                    <div class="card-body">
+                        Are you worried about server management management, worry not as we help you build and manage
+                        your
+                        cloud infrastructure
+                    </div>
+                </div>
+            </div>
+            <!--consultancy-->
+            <div class="col-md-3 pt-2 pb-2">
+                <div class="card">
+                    <div class="card-header">
+                        <img class="card-img" src="{% static 'enquiries/img/consult.svg' %}" style="" alt="img">
+                        <p class="card-title pt-2 consultancy">Consultancy</p>
+                    </div>
+                    <div class="card-body">
+                        Do you have an idea that you want to bring to live.As NyashTechSolutions we're help to help you make your
+                        dreams come true
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!--quote-->
+    <div class="container-fluid bg-light">
+        <h1 class="pt-4 quote">"Talk is cheap, we'll show you the code
+            ..."</h1>
+        <div class="pb-4"></div>
+    </div>
+{% endblock %}
+

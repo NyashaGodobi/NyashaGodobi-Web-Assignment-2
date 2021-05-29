@@ -1,0 +1,107 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+
+    <!--favicon-->
+    <link rel="icon" type="image/png" sizes="64x64" href="{% static 'enquiries/img/' %}">
+
+    {% block title %}{% endblock %}
+
+    <!--jquery-->
+    <script src="{% static 'enquiries/js/jquery-slim.min.js' %}"></script>
+
+    <!--css-->
+    <link href="{% static 'enquiries/css/bootstrap.min.css' %}" rel="stylesheet"/>
+    <link href="{% static 'enquiries/css/all.min.css' %}" rel="stylesheet"/>
+    <link href="{% static 'enquiries/css/datatables.css' %}" rel="stylesheet"/>
+    <link href="{% static 'enquiries/css/main.css' %}" rel="stylesheet"/>
+
+</head>
+<body data-spy="scroll" data-target=".navbar" data-offset="50">
+<!--navigation bar-->
+<nav class="navbar navbar-expand-md navbar-light shadow-lg sticky-top nav-bg" data-target="fixed-on-scroll">
+    <div class="container">
+        <!--NavBar Brand-->
+        <div class="navbar-brand">
+            <img src="{% static 'enquiries/img/' %}" class="myBrand" alt="logo" onclick="location.href='#'">
+        </div>
+
+        <!--ToggleButton-->
+
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#mainNav"
+                aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <!--NavLinks-->
+        <div class="collapse navbar-collapse" id="mainNav" style="font-weight: lighter">
+
+            <!--navbar center-->
+            <ul class="nav navbar-nav mr-auto mx-auto">
+            </ul>
+
+            <!--navbar right-->
+            <ul class="nav navbar-nav navbar-right mr-lg-4">
+
+                <!--home-->
+                <li class="nav-item main {% if request.path == '/' %} active {% endif %} ">
+                    <a class="nav-link" href="{% url 'home' %}">Home</a>
+                </li>
+
+                <!--services-->
+                <li class="nav-item  {% if request.path == '/services/' %} active {% endif %} ">
+                    <a class="nav-link" href="{% url 'services' %}">Services</a>
+                </li>
+
+                <!--contact us-->
+                <li class="nav-item main {% if request.path == '/submit-enquiry/' %} active {% endif %} ">
+                    <a class="nav-link" href="{% url 'submit-enquiry' %}">Enquires</a>
+                </li>
+
+            </ul>
+        </div>
+
+    </div>
+
+</nav>
+
+<!--other pages-->
+<div class="content">
+    <div class="container-fluid">
+        <!--main content-->
+        <main role="main" class="content">
+            <div class="row">
+                <div class="col-md-12">
+                    <script>
+                        $("document").ready(function () {
+                            setTimeout(function () {
+                                $("div.alert").remove();
+                            }, 5000); // 3 secs
+
+                        });
+                    </script>
+                    {% if messages %}
+                        {% for message in messages %}
+                            <div class="alert alert-{{ message.tags }} alert" style="text-align: center">
+                                {{ message }}
+                            </div>
+                        {% endfor %}
+                    {% endif %}
+                </div>
+                <!--other pages-->
+                {% block body %}{% endblock body %}
+            </div>
+        </main>
+    </div>
+</div>
+
+
+    <!--jquery-->
+    <script src="{% static 'enquiries/js/datatables.js' %}"></script>
+
+</body>
+</html>
